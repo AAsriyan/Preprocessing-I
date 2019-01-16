@@ -53,7 +53,103 @@ table {
     box-sizing: border-box;
 }
 
-html, body {
-    height: 100%;
+//Variables
+
+@textColor: white;
+@main-text-color: rgb(6, 103, 208);
+@universalMargin: 1rem;
+@coinbase-blue: rgb(60, 144, 223);
+
+//Mixins
+
+.box-sizing (@type: border-box) {
+	-webkit-box-sizing: @type;
+	-moz-box-sizing:    @type;
+	box-sizing:         @type;
 }
+
+.center() {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.custom-layout(@justify, @align) {
+  display: flex;
+  justify-content: @justify;
+  align-items: @align; 
+}
+
+.custom-button() {
+	border: 1px solid white;
+	font-size: 1.6rem;
+	background-color: @coinbase-blue;
+	color: @textColor;
+	border-radius: 1rem;
+	width: 8rem;
+	height: 4rem;;
+	text-align: center;
+}
+
+//General Styles
+
+html, body {
+	height: 100%;
+	font-size: 62.5%;
+	line-height: 1.25;
+}
+
+.container {
+	max-width: 80rem;
+  margin: 0 auto;
+	padding: 2rem;
+	
+	h1 {
+		font-size: 4rem;
+		color: @textColor;
+		margin: @universalMargin;
+	}
+
+	h2 {
+		font-size: 2rem;
+		color: @textColor;
+		margin: @universalMargin;
+	}
+
+	nav {
+		.custom-layout(space-between, center);
+	}
+
+	nav a {
+		text-decoration: none;
+		margin: @universalMargin;
+		.custom-button();
+		.center();
+
+	}
+
+	nav a:hover {
+		background-color: white;
+		color: @coinbase-blue;
+	}
+
+	.main-header {
+		.custom-layout(space-between, center);
+		flex-direction: column;
+		background-color: @coinbase-blue;
+	}
+
+	.info {
+		font-size: 1.5rem;
+		color: @textColor;
+		.center();
+		margin: @universalMargin;
+	}
+
+	.info p {
+		padding: 1rem;
+	}
+}
+
+
 

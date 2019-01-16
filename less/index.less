@@ -167,6 +167,9 @@ html, body {
 
 	nav {
 		.custom-layout(space-between, flex-start);
+		@media (max-width: 50rem) {
+			display: block;
+		}
 	}
 
 	nav a {
@@ -175,6 +178,9 @@ html, body {
 		font-family: @body-font-family;
 		.custom-button();
 		.center();
+		@media (max-width: 50rem) {
+			width: 20rem;
+		}
 
 	}
 
@@ -194,6 +200,9 @@ html, body {
 		color: @textColor;
 		.center();
 		margin: @universalMargin;
+		@media (max-width: 500px) {
+			display: block;
+		}
 	}
 
 	.info p {

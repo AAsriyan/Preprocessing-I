@@ -184,6 +184,11 @@ body {
   align-items: flex-start;
   flex-wrap: wrap;
 }
+@media (max-width: 50rem) {
+  .container nav {
+    display: block;
+  }
+}
 .container nav a {
   text-decoration: none;
   margin: 1rem;
@@ -199,6 +204,11 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+@media (max-width: 50rem) {
+  .container nav a {
+    width: 20rem;
+  }
 }
 .container nav a:hover {
   background-color: white;
@@ -219,6 +229,11 @@ body {
   justify-content: center;
   align-items: center;
   margin: 1rem;
+}
+@media (max-width: 500px) {
+  .container .info {
+    display: block;
+  }
 }
 .container .info p {
   padding: 1rem;

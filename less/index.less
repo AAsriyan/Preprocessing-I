@@ -56,9 +56,10 @@ table {
 //Variables
 
 @textColor: white;
-@main-text-color: rgb(6, 103, 208);
 @universalMargin: 1rem;
 @coinbase-blue: rgb(60, 144, 223);
+@coinbase-blue-text: rgb(6, 103, 208);
+@body-font-family: 'Roboto', sans-serif;
 
 //Mixins
 
@@ -77,7 +78,8 @@ table {
 .custom-layout(@justify, @align) {
   display: flex;
   justify-content: @justify;
-  align-items: @align; 
+	align-items: @align; 
+	flex-wrap: wrap;
 }
 
 .custom-button() {
@@ -89,6 +91,22 @@ table {
 	width: 8rem;
 	height: 4rem;;
 	text-align: center;
+}
+
+.level-blue-box() {
+	border: 1px solid @coinbase-blue-text;
+	background-color: @coinbase-blue-text;
+	color: @coinbase-blue-text;
+}
+
+.level-white-box() {
+	border: 1px solid @coinbase-blue-text;
+	background-color: white;
+	color: white;
+}
+
+.bordered-bottom() {
+	border-bottom: 1px solid @coinbase-blue-text;
 }
 
 //General Styles
@@ -108,21 +126,53 @@ html, body {
 		font-size: 4rem;
 		color: @textColor;
 		margin: @universalMargin;
+		font-family: 'Pacifico', cursive;
 	}
 
 	h2 {
 		font-size: 2rem;
 		color: @textColor;
 		margin: @universalMargin;
+		font-family: @body-font-family;
+	}
+
+	h3 {
+		font-size: 2rem;
+		color: @coinbase-blue-text;
+		margin: @universalMargin;
+		font-family: @body-font-family;
+		.bordered-bottom();
+	}
+
+	h4 {
+		font-size: 1.5rem;
+		color: @coinbase-blue-text;
+		margin: @universalMargin;
+		font-family: @body-font-family;
+	}
+
+	ul li {
+		list-style-type: disc;
+		list-style-position: inside;
+		font-family: @body-font-family;
+		font-size: 1.5rem;
+		margin: @universalMargin;
+	}
+
+	p {
+		font-family: @body-font-family;
+		font-size: 1.5rem;
+		margin: @universalMargin;		
 	}
 
 	nav {
-		.custom-layout(space-between, center);
+		.custom-layout(space-between, flex-start);
 	}
 
 	nav a {
 		text-decoration: none;
 		margin: @universalMargin;
+		font-family: @body-font-family;
 		.custom-button();
 		.center();
 
@@ -148,6 +198,66 @@ html, body {
 
 	.info p {
 		padding: 1rem;
+		font-family: @body-font-family;
+	}
+
+	.skills-content {
+		.custom-layout(space-between, center);
+	}
+
+	.skills {
+		width: 50%;
+	}
+
+	.skill-level {
+		width: 50%;
+		margin-top: 1rem;
+	}
+
+	.rank-split {
+		.custom-layout(space-evenly, center);
+	}
+
+	.rank {
+		width: 50%;
+	}
+
+	.rank-level {
+		width: 50%;
+	}
+
+	.level-blue {
+		.level-blue-box;
+	}
+
+	.level-white {
+		.level-white-box();
+	}
+
+	.experience-content {
+		max-width: 100%;
+	}
+	
+	.experience-content p {
+		font-family: @body-font-family;
+		font-style: italic;
+	}
+
+	.education-content p {
+		font-family: @body-font-family;
+		font-style: italic;
+	}
+
+	.education {
+		.custom-layout(flex-start, flex-start);
+	}
+
+	.lambda-school {
+		width: 50%;
+	}
+
+	.college {
+		width: 50%;
 	}
 }
 

@@ -75,6 +75,12 @@ table {
   align-items: center;
 }
 
+.custom-border() {
+	border: 1px solid @coinbase-blue;
+	border-radius: 1rem;
+	margin-top: 1rem;
+}
+
 .custom-layout(@justify, @align) {
   display: flex;
   justify-content: @justify;
@@ -193,6 +199,7 @@ html, body {
 		.custom-layout(space-between, center);
 		flex-direction: column;
 		background-color: @coinbase-blue;
+		border-radius: 1rem;
 	}
 
 	.info {
@@ -212,6 +219,7 @@ html, body {
 
 	.skills-content {
 		.custom-layout(space-between, center);
+		.custom-border;
 	}
 
 	.skills {
@@ -245,11 +253,17 @@ html, body {
 
 	.experience-content {
 		max-width: 100%;
+		.custom-border();
 	}
 	
 	.experience-content p {
 		font-family: @body-font-family;
 		font-style: italic;
+	}
+
+	.education-content {
+		.custom-border();
+		margin-bottom: 1rem;
 	}
 
 	.education-content p {
@@ -267,6 +281,15 @@ html, body {
 
 	.college {
 		width: 50%;
+	}
+
+	.home-footer {
+		background-color: @coinbase-blue;
+		border-radius: 1rem;
+	}
+
+	footer nav {
+		.custom-layout(center, center);
 	}
 }
 

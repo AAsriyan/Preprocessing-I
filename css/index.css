@@ -221,6 +221,7 @@ body {
   flex-wrap: wrap;
   flex-direction: column;
   background-color: #3c90df;
+  border-radius: 1rem;
 }
 .container .info {
   font-size: 1.5rem;
@@ -244,6 +245,9 @@ body {
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
+  border: 1px solid #3c90df;
+  border-radius: 1rem;
+  margin-top: 1rem;
 }
 .container .skills {
   width: 50%;
@@ -276,10 +280,19 @@ body {
 }
 .container .experience-content {
   max-width: 100%;
+  border: 1px solid #3c90df;
+  border-radius: 1rem;
+  margin-top: 1rem;
 }
 .container .experience-content p {
   font-family: 'Roboto', sans-serif;
   font-style: italic;
+}
+.container .education-content {
+  border: 1px solid #3c90df;
+  border-radius: 1rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
 }
 .container .education-content p {
   font-family: 'Roboto', sans-serif;
@@ -296,4 +309,14 @@ body {
 }
 .container .college {
   width: 50%;
+}
+.container .home-footer {
+  background-color: #3c90df;
+  border-radius: 1rem;
+}
+.container footer nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
 }
